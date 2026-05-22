@@ -1,17 +1,16 @@
-# portfolio
+# My Portfolio
 
-portfolio
+A professional portfolio application built using **Flutter** to showcase my projects, resume, and skills.
 
-## Getting Started
+## ✨ Features
+* **About Me** – Introduction and skills.
+* **Resume** – View or download my latest CV.
+* **Education** – Details about my academic background
 
-This project is a starting point for a Flutter application.
+## 🛠️ How to Run Locally
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Clone the project:**
+   
+```bash
+   git clone [https://github.com/Aish12s/portfolio.git](https://github.com/Aish12s/portfolio.git)
+   cd portfolio

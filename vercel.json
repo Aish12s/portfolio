@@ -1,7 +1,11 @@
 {
   "cleanUrls": true,
-  "public": true,
+  "trailingSlash": false,
   "rewrites": [
+    {
+      "source": "/assets/(.*)",
+      "destination": "build/web/assets/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "build/web/$1"

@@ -155,18 +155,45 @@ class HeaderSection extends StatelessWidget {
           textAlign: isCompact ? TextAlign.center : TextAlign.start,
           style: Theme.of(context).textTheme.headlineLarge?.copyWith(
             color: Colors.white,
-            fontSize: isCompact ? 26 : 38,
-            letterSpacing: -0.5,
+            fontSize: isCompact ? 28 : 42,
+            fontWeight: FontWeight.w900,
+            letterSpacing: -1.0,
+            shadows: [
+              Shadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                offset: const Offset(0, 2),
+                blurRadius: 4,
+              ),
+            ],
           ),
         ),
-        const SizedBox(height: 6),
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
+          ),
+          child: Text(
+            'Software Developer & Technical Consultant',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
         Text(
-          'Technical Consultant  ·  Flutter · NetSuite · Angular · React',
+          'Flutter  ·  React  ·  Angular  ·  Java  ·  Spring Boot  ·  NetSuite',
           textAlign: isCompact ? TextAlign.center : TextAlign.start,
           style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.85),
+            color: Colors.white.withValues(alpha: 0.9),
             fontSize: 15,
             fontWeight: FontWeight.w500,
+            letterSpacing: 0.3,
           ),
         ),
         const SizedBox(height: 20),
@@ -184,6 +211,11 @@ class HeaderSection extends StatelessWidget {
               icon: Icons.email,
               label: 'aishwaryasuvarna16@gmail.com',
               url: 'mailto:aishwaryasuvarna16@gmail.com',
+            ),
+            ContactChip(
+              icon: Icons.link,
+              label: 'LinkedIn',
+              url: 'https://www.linkedin.com/in/aishwarya-suvarna/',
             ),
             ContactChip(
               icon: Icons.code,
@@ -278,39 +310,57 @@ class MainColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
+        ResumeSection(
+          title: 'About Me',
+          icon: Icons.person_outline,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Text(
+                'Full-Stack Software Developer and Technical Consultant with 2+ years of experience building production-grade web and mobile applications. Proficient in Flutter, Angular, React, Java, and NetSuite (SuiteScript 2.0). Proven track record of designing scalable systems, automating business workflows, and integrating third-party APIs. Experienced in the full software development lifecycle — from requirements and architecture to deployment and optimization.',
+                style: TextStyle(
+                  color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.8),
+                  height: 1.6,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 16),
         ResumeSection(
           title: 'Work Experience',
           icon: Icons.work_outline,
           children: [
             TimelineItem(
-              title: 'Jr. Technical Consultant',
+              title: 'Jr. Software Developer / Technical Consultant',
               subtitle: 'Ventus Infotech Pvt. Ltd. (Softype Inc.)',
               trailing: 'Nov 2023 – Aug 2025',
+              logo: 'assets/image/softype.jfif',
               url:
               'https://drive.google.com/file/d/1CGcgDiPQQkOILzCozoC6IT7_SeFHbRlq/view?usp=sharing',
               bullets: [
-                BulletItem(text: 'Customized NetSuite using SuiteScript 2.0 — Client Scripts, User Event Scripts, Suitelets, and Map/Reduce scripts.'),
-                BulletItem(text: 'Designed advanced PDF/HTML templates for invoices, purchase orders, and receipts with structured tax breakdowns.'),
-                BulletItem(text: 'Built workflows and field-level scripts to automate record updates, validations, and business processes.'),
-                BulletItem(text: 'Integrated NetSuite with third-party systems using RESTful APIs for real-time synchronization.'),
-                BulletItem(text: 'Implemented a Flutter mobile app that connects to NetSuite through secure POST requests.'),
-                BulletItem(text: 'Optimized legacy scripts and Suitelets for faster load times and improved maintainability.'),
+                BulletItem(text: 'Developed custom NetSuite SuiteScript 2.0 modules (Client Scripts, User Event Scripts, Suitelets, and Map/Reduce) to automate core business processes.'),
+                BulletItem(text: 'Designed and automated complex Advanced PDF/HTML and Suitlet templates for diverse internal and external business records, embedding dynamic data-binding rules to ensure layout compliance across multiple client accounts.'),
+                BulletItem(text: 'Reduced manual data entry by building automated field-level validation workflows and record-update triggers.'),
+                BulletItem(text: 'Integrated NetSuite with third-party platforms using RESTful APIs, enabling real-time bidirectional data sync.'),
+                BulletItem(text: 'Designed and deployed a cross-platform Flutter mobile app integrated with NetSuite via secure RESTful APIs.'),
+                BulletItem(text: 'Refactored legacy SuiteScript codebase, improving page load performance and long-term maintainability.'),
               ],
             ),
             TimelineItem(
-              title: 'SDE Intern',
+              title: 'Software Developer Intern',
               subtitle: 'CRISIL Ltd.',
               trailing: 'Jan 2023 – Jul 2023',
+              logo: 'assets/image/crisil.png',
               url:
               'https://drive.google.com/file/d/1NNl_C7G10-yATlLtc5SNPkZ-Yk1jxV0B/view?usp=sharing',
               bullets: [
-                BulletItem(text: 'Registered and deployed reports in the frontend BI platform for UAT.'),
-                BulletItem(text: 'Streamlined data analysis procedures, reducing processing time by 20%.'),
-                BulletItem(text: 'Developed Angular screens from wireframes with drill-down data visualization flows.'),
-                BulletItem(text: 'Created report tables with filters, validation, and clear visualization techniques.'),
-                BulletItem(text: 'Identified and resolved complex frontend issues in the UAT platform.'),
+                BulletItem(text: 'Built Angular data visualization screens from wireframes, including drill-down reports with dynamic filters.'),
+                BulletItem(text: 'Reduced data processing time by 20% by streamlining ETL procedures in the BI platform.'),
+                BulletItem(text: 'Deployed and validated reports in the UAT environment, resolving critical frontend defects pre-release.'),
               ],
             ),
           ],
@@ -326,8 +376,8 @@ class MainColumn extends StatelessWidget {
               trailing: 'Sep – Dec 2022',
               url: 'https://github.com/Aish12s/retrival',
               bullets: [
-                BulletItem(text: 'Developed a comprehensive web scraping strategy to collect structured website data for easy search and retrieval.'),
-                BulletItem(text: 'Led a team of 3 members from planning through implementation.'),
+                BulletItem(text: 'Built a full-stack search engine using Python (Flask) and ReactJS with a custom web crawler, indexer, and ranked retrieval system.'),
+                BulletItem(text: 'Led a team of 3 through full SDLC — from architecture design to final deployment.'),
               ],
             ),
             TimelineItem(
@@ -336,8 +386,8 @@ class MainColumn extends StatelessWidget {
               trailing: 'Jun – Aug 2022',
               url: 'https://github.com/Aish12s/Apt',
               bullets: [
-                BulletItem(text: 'Built an app using single-person pose estimation to assess exercise effectiveness.'),
-                BulletItem(text: 'Collaborated in a team of 3 to design, develop, and test the mobile experience.'),
+                BulletItem(text: 'Developed a Flutter/Dart mobile app using TensorFlow Lite pose estimation to provide real-time exercise feedback.'),
+                BulletItem(text: 'Implemented ML model integration with on-device inference for low-latency performance.'),
               ],
             ),
           ],
@@ -384,21 +434,57 @@ class SideColumn extends StatelessWidget {
             SkillGroup(
               title: 'Languages',
               skills: [
-                'Python', 'JavaScript', 'Node.js', 'Java',
-                'Dart', 'HTML', 'CSS', 'C#',
+                Skill('Python', logo: 'assets/image/Python.png'),
+                Skill('JavaScript', logo: 'assets/image/images.png'),
+                Skill('Node.js', logo: 'assets/image/Node.js_logo.svg.png'),
+                Skill('Java', logo: 'assets/image/java.png'),
+                Skill('Dart', logo: 'assets/image/dart.png'),
+                Skill('HTML', logo: 'assets/image/html.png'),
+                Skill('CSS', logo: 'assets/image/css.png'),
+                Skill('C#', logo: 'assets/image/csharp.png'),
               ],
             ),
             SkillGroup(
               title: 'Frameworks',
-              skills: ['Angular', 'React', 'Flutter', 'Spring Boot', 'ASP.NET'],
+              skills: [
+                Skill('Angular', logo: 'assets/image/angular.png'),
+                Skill('React', logo: 'assets/image/react.png'),
+                Skill('Flutter', logo: 'assets/image/flutter.png'),
+                Skill('Spring Boot', logo: 'assets/image/spring.png'),
+                Skill('ASP.NET', logo: 'assets/image/asp.png'),
+              ],
             ),
             SkillGroup(
               title: 'Databases',
-              skills: ['SQL Server', 'MySQL', 'MongoDB', 'Stored Procedures'],
+              skills: [
+                Skill('SQL Server', logo: 'assets/image/sqlserver.png'),
+                Skill('MySQL', logo: 'assets/image/mysql.png'),
+                Skill('MongoDB', logo: 'assets/image/mongodb.png'),
+                Skill('Stored Procedures', logo: 'assets/image/storedprocedure.png'),
+              ],
             ),
             SkillGroup(
               title: 'Tools',
-              skills: ['Git', 'Bitbucket', 'NetSuite', 'Pentaho', 'RESTful APIs'],
+              skills: [
+                Skill('Git', logo: 'assets/image/git.png'),
+                Skill('Bitbucket', logo: 'assets/image/bitbucket.png'),
+                Skill('NetSuite', logo: 'assets/image/netsuite.png'),
+                Skill('Pentaho', logo: 'assets/image/pentaho.png'),
+                Skill('REST API', logo: 'assets/image/postman.png'),
+                Skill('Jira', logo: 'assets/image/jira.png'),
+              ],
+            ),
+            SkillGroup(
+              title: 'Concepts',
+              skills: [
+                Skill('REST APIs'),
+                Skill('Agile/Scrum'),
+                Skill('SDLC'),
+                Skill('OOP'),
+                Skill('CI/CD'),
+                Skill('MVC'),
+                Skill('Data Structures'),
+              ],
             ),
           ],
         ),
@@ -520,6 +606,7 @@ class TimelineItem extends StatefulWidget {
     required this.trailing,
     required this.bullets,
     this.url,
+    this.logo,
   });
 
   final String title;
@@ -527,9 +614,47 @@ class TimelineItem extends StatefulWidget {
   final String trailing;
   final List<BulletItem> bullets;
   final String? url;
+  final String? logo;
 
   @override
   State<TimelineItem> createState() => _TimelineItemState();
+}
+
+class _PortfolioTimelineLogo extends StatelessWidget {
+  const _PortfolioTimelineLogo({required this.logo, required this.isHovered});
+  final String logo;
+  final bool isHovered;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedScale(
+      duration: const Duration(milliseconds: 200),
+      scale: isHovered ? 1.1 : 1.0,
+      child: Container(
+        width: 48,
+        height: 48,
+        margin: const EdgeInsets.only(top: 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(6),
+        child: Image.asset(
+          logo,
+          fit: BoxFit.contain,
+          errorBuilder: (context, error, stackTrace) =>
+              const Icon(Icons.business, size: 24, color: Colors.grey),
+        ),
+      ),
+    );
+  }
 }
 
 class _TimelineItemState extends State<TimelineItem> {
@@ -547,84 +672,111 @@ class _TimelineItemState extends State<TimelineItem> {
           bottom: 20,
           left: _isHovered ? 6 : 0, // Gentle nudge effect
         ),
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Wrap(
-              alignment: WrapAlignment.spaceBetween,
-              spacing: 12,
-              runSpacing: 4,
-              children: [
-                widget.url != null
-                    ? _HoverableLink(
-                  onTap: () => openUrl(widget.url!),
-                  child: (hovered) => Row(
-                    mainAxisSize: MainAxisSize.min,
+            if (widget.logo != null) ...[
+              _PortfolioTimelineLogo(logo: widget.logo!, isHovered: _isHovered),
+              const SizedBox(width: 16),
+            ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Wrap(
+                    alignment: WrapAlignment.spaceBetween,
+                    spacing: 12,
+                    runSpacing: 4,
                     children: [
-                      Text(
-                        widget.title,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                          decoration: hovered
-                              ? TextDecoration.underline
-                              : TextDecoration.none,
-                          decorationColor:
-                          Theme.of(context).colorScheme.primary,
+                      widget.url != null
+                          ? _HoverableLink(
+                              onTap: () => openUrl(widget.url!),
+                              child: (hovered) => Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    widget.title,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                          decoration: hovered
+                                              ? TextDecoration.underline
+                                              : TextDecoration.none,
+                                          decorationColor: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                        ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  AnimatedOpacity(
+                                    opacity: hovered ? 1.0 : 0.0,
+                                    duration: const Duration(milliseconds: 150),
+                                    child: Icon(Icons.open_in_new,
+                                        size: 13,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Text(
+                              widget.title,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                  ),
+                            ),
+                      AnimatedScale(
+                        duration: const Duration(milliseconds: 200),
+                        scale: _isHovered ? 1.05 : 1.0,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 3),
+                          decoration: BoxDecoration(
+                            color:
+                                Theme.of(context).colorScheme.primaryContainer,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            widget.trailing,
+                            style: TextStyle(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                            ),
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 4),
-                      AnimatedOpacity(
-                        opacity: hovered ? 1.0 : 0.0,
-                        duration: const Duration(milliseconds: 150),
-                        child: Icon(Icons.open_in_new,
-                            size: 13,
-                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ],
                   ),
-                )
-                    : Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                AnimatedScale(
-                  duration: const Duration(milliseconds: 200),
-                  scale: _isHovered ? 1.05 : 1.0,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primaryContainer,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Text(
-                      widget.trailing,
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 12,
-                      ),
+                  const SizedBox(height: 4),
+                  Text(
+                    widget.subtitle,
+                    style: TextStyle(
+                      color: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.color
+                          ?.withValues(alpha: 0.8),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 4),
-            Text(
-              widget.subtitle,
-              style: TextStyle(
-                color: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.color
-                    ?.withValues(alpha: 0.8),
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
+                  const SizedBox(height: 10),
+                  ...widget.bullets.map((b) => BulletText(item: b)),
+                ],
               ),
             ),
-            const SizedBox(height: 10),
-            ...widget.bullets.map((b) => BulletText(item: b)),
           ],
         ),
       ),
@@ -779,7 +931,7 @@ class SkillGroup extends StatelessWidget {
   const SkillGroup({super.key, required this.title, required this.skills});
 
   final String title;
-  final List<String> skills;
+  final List<Skill> skills;
 
   @override
   Widget build(BuildContext context) {
@@ -805,12 +957,18 @@ class SkillGroup extends StatelessWidget {
           Wrap(
             spacing: 7,
             runSpacing: 7,
-            children: skills.map((s) => SkillChip(label: s)).toList(),
+            children: skills.map((s) => SkillChip(skill: s)).toList(),
           ),
         ],
       ),
     );
   }
+}
+
+class Skill {
+  final String label;
+  final String? logo;
+  const Skill(this.label, {this.logo});
 }
 
 // ─────────────────────────────────────────────
@@ -978,8 +1136,11 @@ class _ContactChipState extends State<ContactChip> {
         onTapCancel: () => setState(() => _pressed = false),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),
-          transform: Matrix4.identity()
-            ..scale(_pressed ? 0.95 : 1.0, _pressed ? 0.95 : 1.0),
+          transform: Matrix4.diagonal3Values(
+            _pressed ? 0.95 : 1.0,
+            _pressed ? 0.95 : 1.0,
+            1.0,
+          ),
           transformAlignment: Alignment.center,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
           decoration: BoxDecoration(
@@ -1029,8 +1190,8 @@ class _ContactChipState extends State<ContactChip> {
 // ─────────────────────────────────────────────
 
 class SkillChip extends StatefulWidget {
-  const SkillChip({super.key, required this.label});
-  final String label;
+  const SkillChip({super.key, required this.skill});
+  final Skill skill;
 
   @override
   State<SkillChip> createState() => _SkillChipState();
@@ -1051,7 +1212,6 @@ class _SkillChipState extends State<SkillChip> {
         duration: const Duration(milliseconds: 150),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
-          // Smooth color transition from faded to solid container background
           color: _isHovered
               ? primaryContainer.withValues(alpha: 0.9)
               : primaryContainer.withValues(alpha: 0.4),
@@ -1062,13 +1222,29 @@ class _SkillChipState extends State<SkillChip> {
                 : primaryColor.withValues(alpha: 0.15),
           ),
         ),
-        child: Text(
-          widget.label,
-          style: TextStyle(
-            color: primaryColor,
-            fontWeight: FontWeight.w600,
-            fontSize: 13,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (widget.skill.logo != null) ...[
+              Image.asset(
+                widget.skill.logo!,
+                width: 16,
+                height: 16,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) =>
+                    const SizedBox.shrink(),
+              ),
+              const SizedBox(width: 6),
+            ],
+            Text(
+              widget.skill.label,
+              style: TextStyle(
+                color: primaryColor,
+                fontWeight: FontWeight.w600,
+                fontSize: 13,
+              ),
+            ),
+          ],
         ),
       ),
     );

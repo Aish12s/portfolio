@@ -60,9 +60,6 @@ flutter:
   assets:
     - assets/image/
     - assets/files/
-    - assets/files/resume.pdf
-    - assets/image/vsit.png
-    - assets/image/siescoms.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

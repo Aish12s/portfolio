@@ -176,7 +176,7 @@ class HeaderSection extends StatelessWidget {
             border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
           ),
           child: Text(
-            'Software Developer & Technical Consultant',
+            'Software Developer',
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,
@@ -435,6 +435,8 @@ class SideColumn extends StatelessWidget {
                 Skill('Node.js', logo: 'assets/image/Node.js_logo.svg.png'),
                 Skill('Java', logo: 'assets/image/java.png'),
                 Skill('Dart', logo: 'assets/image/dart.png'),
+                Skill('C', logo: 'assets/image/c.png'),
+                Skill('C++', logo: 'assets/image/c++.png'),
                 Skill('HTML', logo: 'assets/image/html.png'),
                 Skill('CSS', logo: 'assets/image/css.png'),
                 Skill('C#', logo: 'assets/image/csharp.png'),
@@ -456,7 +458,6 @@ class SideColumn extends StatelessWidget {
                 Skill('SQL Server', logo: 'assets/image/sqlserver.png'),
                 Skill('MySQL', logo: 'assets/image/mysql.png'),
                 Skill('MongoDB', logo: 'assets/image/mongodb.png'),
-                Skill('Stored Procedures', logo: 'assets/image/storedprocedure.png'),
               ],
             ),
             SkillGroup(
